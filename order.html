@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order | Golden Glaze Donut Shoppe</title>
+
+  <meta name="description" content="Build a Custom Dozen at Golden Glaze Donut Shoppe. Choose your donuts, use Surprise Me, or spin Donut Slots for a random dozen.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <div class="brand">
+	  <img src="logo.png" alt="Golden Glaze Donut Shoppe Logo" class="brand__logo-img">
+        <div class="brand__text">
+          <div class="brand__name">Golden Glaze</div>
+          <div class="brand__tagline">Lehigh Valley Born, Freshly Torn</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="locations.html">Locations</a>
+        <a href="order.html" class="is-active">Order</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= CUSTOM DOZEN ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <div class="card__body">
+            <p class="badge">Order</p>
+            <h1>Custom Dozen</h1>
+            <p class="small">Pick your own donuts, hit “Surprise Me,” or spin Slots below.</p>
+
+            <form class="form" id="orderForm">
+              <div class="field">
+                <label class="label" for="pickup">Pickup Location</label>
+                <select class="select" id="pickup" required>
+                  <option value="">Select a location</option>
+                  <option>Downtown Allentown</option>
+                  <option>Historic Bethlehem</option>
+                  <option>Easton Public Square</option>
+                  <option>Emmaus Triangle</option>
+                  <option>Schnecksville (The Zoo)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="label" for="name">Name</label>
+                <input class="input" id="name" type="text" required>
+              </div>
+
+              <div class="field">
+                <label class="label" for="notes">Notes (optional)</label>
+                <textarea class="textarea" id="notes" placeholder="Allergies, no sprinkles, extra napkins, etc."></textarea>
+              </div>
+
+              <!-- Pick your own + Surprise -->
+              <div class="order-tools card">
+                <div class="card__body">
+                  <h2 class="order-tools__title">Build Your Dozen</h2>
+
+                  <div class="picker-row">
+                    <div class="picker">
+                      <label class="label" for="donutSelect">Choose a donut</label>
+                      <select class="select" id="donutSelect" aria-label="Choose a donut to add"></select>
+                    </div>
+
+                    <div class="picker-actions">
+                      <button class="btn" type="button" id="addBtn">Add</button>
+                      <button class="btn btn--ghost" type="button" id="surpriseBtn">Surprise Me (Fill)</button>
+                      <button class="btn btn--ghost" type="button" id="clearBtn">Clear</button>
+                    </div>
+                  </div>
+
+                  <div class="order-summary">
+                    <h3>Your Dozen (<span id="count">0</span>/12)</h3>
+                    <ul class="order-list" id="orderList" aria-live="polite"></ul>
+                    <p class="small" id="orderStatus">Tip: You can mix regular + location exclusives in the pool.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn" type="submit">Submit Order</button>
+              <p class="small" id="formStatus"></p>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- ================= SLOTS (SEPARATE) ================= -->
+<section class="section">
+  <div class="container">
+    <div class="card slots">
+      <div class="card__body">
+        <p class="badge">Fun Mode</p>
+        <h2 class="accent-title">Donut Slots 🍩</h2>
+        <p class="small">Spin all 12 reels. When it stops, your results automatically fill your Custom Dozen.</p>
+
+        <div class="slots-machine slots-12" aria-label="Slots machine (12 reels)">
+          <div class="reel" id="reel1">—</div>
+          <div class="reel" id="reel2">—</div>
+          <div class="reel" id="reel3">—</div>
+          <div class="reel" id="reel4">—</div>
+          <div class="reel" id="reel5">—</div>
+          <div class="reel" id="reel6">—</div>
+          <div class="reel" id="reel7">—</div>
+          <div class="reel" id="reel8">—</div>
+          <div class="reel" id="reel9">—</div>
+          <div class="reel" id="reel10">—</div>
+          <div class="reel" id="reel11">—</div>
+          <div class="reel" id="reel12">—</div>
+        </div>
+
+        <div class="slots-actions">
+          <button class="btn" type="button" id="spinBtn">Spin 12</button>
+          <button class="btn btn--ghost" type="button" id="slotsToOrderBtn">Use These Results</button>
+        </div>
+
+        <p class="small" id="slotsStatus">Ready to spin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="small">© 2026 Golden Glaze Donut Shoppe — Proudly serving the Lehigh Valley</div>
+      <div class="small">The best treat in the 610 🍩</div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="order.js"></script>
+</body>
+</html>
+

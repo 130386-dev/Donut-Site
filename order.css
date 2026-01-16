@@ -1,0 +1,112 @@
+/* =========================
+   Golden Glaze — ORDER PAGE
+   ========================= */
+
+.order-tools{
+  background: rgba(184,224,210,0.22);
+  border: 1px solid rgba(74,44,42,0.10);
+}
+
+.order-tools__title{
+  margin-bottom: 10px;
+}
+
+.picker-row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.picker-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.order-summary{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(74,44,42,0.10);
+}
+
+.order-list{
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.order-list li{
+  margin: 6px 0;
+}
+
+.remove-btn{
+  margin-left: 10px;
+  border: 0;
+  background: rgba(255,133,161,0.18);
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.remove-btn:hover{
+  background: rgba(255,200,87,0.28);
+}
+
+/* ---- Slots ---- */
+.slots{
+  border-left: 8px solid rgba(255,200,87,0.35);
+}
+
+.slots-machine{
+  display: grid;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+/* 12 reels layout */
+.slots-12{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.reel{
+  background: white;
+  border: 1px solid rgba(74,44,42,0.12);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 14px 10px;
+  text-align: center;
+  font-family: var(--font-head);
+  font-weight: 900;
+  min-height: 56px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.reel::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.0),
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.0)
+  );
+  pointer-events: none;
+}
+
+.slots-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px){
+  .slots-12{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 680px){
+  .slots-12{ grid-template-columns: repeat(2, 1fr); }
+}
