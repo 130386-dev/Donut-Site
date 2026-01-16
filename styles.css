@@ -306,6 +306,50 @@ p{ margin: 0 0 1rem; }
   opacity: 0.9;
 }
 
+/* =========================
+   Mobile Nav / Hamburger
+   ========================= */
+
+.menu-btn{
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--deep-bean);
+}
+
+/* Mobile layout */
+@media (max-width: 800px){
+  .menu-btn{
+    display: block;
+  }
+
+  .nav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 12px;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+  }
+
+  .nav.is-open{
+    display: flex;
+  }
+
+  .nav a{
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+}
+
+
 /* ---- Responsive ---- */
 @media (max-width: 900px){
   .grid--3{ grid-template-columns: 1fr 1fr; }
@@ -317,3 +361,4 @@ p{ margin: 0 0 1rem; }
   .grid--3, .grid--2{ grid-template-columns: 1fr; }
   .brand__logo{ width: 46px; height: 46px; }
 }
+
